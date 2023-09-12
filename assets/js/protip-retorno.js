@@ -71,6 +71,7 @@ let tony = {
 // Esto anterior es engorroso, ahora viene la destructuracion
 
 const imprimePropiedades = ({nombre, codeName, vivo, edad, trajes}) => {
+
     console.log({nombre});
     console.log({codeName});
     console.log({vivo});
@@ -79,3 +80,7 @@ const imprimePropiedades = ({nombre, codeName, vivo, edad, trajes}) => {
 
 }
 imprimePropiedades( tony );
+
+// En las funciones flecha tambien podemos dar valores por defecto por si un valor no esta definido
+// por ejemplo, podriamos poner edad = 15, si no se manda edad a la funcion por defecto es 15
+// si se le da, se reemplazar por el valor.
