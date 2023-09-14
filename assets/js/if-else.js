@@ -15,12 +15,16 @@ let dia = hoy.getDay(); // 0: Domingo, 1:lunes...
 
 console.log({dia});
 
-if (dia === 0){
-    console.log('Domingo');
-} else if (dia === 1){
-    console.log('Lunes');
-} else if (dia === 2){
-    console.log('Martes');
-}   else {  
-    console.log('No es lunes, martes o domingo');
-}                
+// if (dia === 0){
+//     console.log('Domingo');
+// } else if (dia === 1){
+//     console.log('Lunes');
+// } else if (dia === 2){
+//     console.log('Martes');
+// }   else {  
+//     console.log('No es lunes, martes o domingo');
+// }                
+diaList = ['domingo','lunes','martes', 'miercoles'
+,'jueves','viernes','sabado'];
+
+console.log(diaList[dia]);
