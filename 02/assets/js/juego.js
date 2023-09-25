@@ -21,12 +21,12 @@ const crearDeck  = () => {
     for(let tipo of tipos){
         for(let especial of especiales){
             deck.push(especial + tipo);
-            
         }
     }
-    
     console.log(deck);
-
+    deck = _.shuffle(deck);
+    console.log(deck);
+    
 }
 
 
