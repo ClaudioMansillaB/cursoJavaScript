@@ -47,5 +47,16 @@ const pedirCarta = () => {
     console.log(carta);
     return carta;
 }
-deck = [];
-pedirCarta();
+
+
+// pedirCarta();
+
+const valorCarta = (carta) => {
+
+    const valor = carta.substring(0, carta.length - 1);
+    return ( !isNaN(valor) ) ? valor*1:( valor === 'A' ) ? 11 : 10;
+
+}
+
+const valor = valorCarta('9D');
+console.log( valor);
