@@ -16,6 +16,8 @@ let puntosJugador = 0,
 // Referencias del HTML
 
 const btnPedirCarta   = document.querySelector('#btnPedirCarta');
+
+const divCartasJugador = document.querySelector('#jugador-cartas');
 const containerPoints = document.querySelectorAll('small');
 // Esta funcion crea un nuevo Deck
 const crearDeck  = () => {
@@ -64,11 +66,23 @@ const valorCarta = (carta) => {
 
 // Eventos
 btnPedirCarta.addEventListener('click', () =>{
-
+    //Puntaje
     const carta = pedirCarta();
-
     puntosJugador += valorCarta(carta);
     containerPoints[0].innerText = puntosJugador;
+    //Desplieque de imagen
+    const imgCarta = document.createElement('img');
+    imgCarta.src = `assets/cartas/${ carta }.png`
+    imgCarta.classList.add('carta');
+    divCartasJugador.append(imgCarta);
+
+    if (puntosJugador > 21) {
+        console.warn('Perdiste');
+        btnPedirCarta.disabled = true;
+    } else if ( puntosJugador === 21){
+        console.warn('21!!');
+        btnPedirCarta.disabled = true;
+    }
 
     
 });
