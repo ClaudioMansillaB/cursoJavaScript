@@ -10,6 +10,13 @@ let deck         = [];
 const tipos      = ['C','D','H','D'];
 const especiales = ['A','J','Q','K'];
 
+let puntosJugador = 0,
+    puntosComputadora =0;
+
+// Referencias del HTML
+
+const btnPedirCarta   = document.querySelector('#btnPedirCarta');
+const containerPoints = document.querySelectorAll('small');
 // Esta funcion crea un nuevo Deck
 const crearDeck  = () => {
  
@@ -26,7 +33,6 @@ const crearDeck  = () => {
     }
     //console.log(deck);
     deck = _.shuffle(deck);
-    console.log(deck);
     return deck;
 }
 
@@ -43,8 +49,6 @@ const pedirCarta = () => {
 
     const carta = deck.shift();
 
-    console.log(deck);
-    console.log(carta);
     return carta;
 }
 
@@ -58,5 +62,13 @@ const valorCarta = (carta) => {
 
 }
 
-const valor = valorCarta('9D');
-console.log( valor);
+// Eventos
+btnPedirCarta.addEventListener('click', () =>{
+
+    const carta = pedirCarta();
+
+    puntosJugador += valorCarta(carta);
+    containerPoints[0].innerText = puntosJugador;
+
+    
+});
